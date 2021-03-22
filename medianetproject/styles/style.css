@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; 
+}
+
+html,
+body {
+  overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.innerdiv {
+  padding: 20px 100px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  table-layout:fixed;
+}
+
+th,
+td {
+  text-align: left;
+  font-size: 18px;
+  padding: 30px 16px;
+}
+
+th {
+  background-color: #e7e7e7;
+}
+
+tr:nth-child(even) {
+  background-color: #fff
+}
+
+tr:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+.background {
+  background-color: #f4f4f4;
+  padding: 1%;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 5%;
+  flex-direction: row;
+}
+
+.flex-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+}
+
+#search-table{
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid black;
+  width: 100%;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.filter h1 {
+  font-weight: 800;
+  font-size: 4rem;
+}
+
+.filter h1:after {
+  content: 'airports';
+  font-size: 4rem;
+  font-weight: 800;
+  color: #000000;
+  opacity: 0.1;
+  margin-left: 10px;
+}
+
+.checkbox-inline {
+  font-size: 14px;
+}
+
+.arrows {
+  padding-top: 4%;
+}
+
+.arrow  svg{
+  height: 58px;
+  width: 58px;
+  fill: #333;
+}
+
+.arrow svg:hover {
+  fill: #000;
+}
+
+.arrow-disable svg {
+  fill: rgb(201, 201, 201);
+  cursor: not-allowed;
+}
+
+.arrow-disable svg:hover {
+  fill: rgb(201, 201, 201);
+  cursor: not-allowed;
+}
+
+.leftarrow,
+.rightarrow {
+  cursor: pointer;
+}
+
+
+.rightarrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+}
+.dashboard{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Checkbox */
+label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+label input {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  border-radius: 5px;
+}
+
+label {
+  margin-right: 20px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form > label input:checked {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #000;
+  border: none;
+}
+
+form > label input::after { 
+  content: "\2713";
+  position: absolute;
+  color: rgb(187, 187, 187);
+  top: 44%;
+  -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  left: 5px;
+}
+
+form > label input:checked::after {
+  color: white;
+}
+
+form > label span {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* Media query */
+@media screen and (max-width:700px)
+{
+  .filter h1:after{
+    font-size: 2rem;
+  }
+  .typehead{
+    font-size: 2rem!important;
+  }
+  .innerdiv {
+    padding: 20px 10px;
+  }
+
+}
+@media screen and (max-width:400px)
+{
+  .filter h1:after{
+    font-size: 1rem;
+  }
+  .typehead{
+    font-size: 1rem!important;
+  }
+}
+
+@media screen and (max-width:990px)
+{
+  table{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .type-filter{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-inline input {
+    margin: 10px 0;
+  }
+  form > label span {
+    margin-left: 5px;
+  }
+}
